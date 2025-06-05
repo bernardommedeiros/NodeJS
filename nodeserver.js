@@ -1,4 +1,4 @@
-// import { createServer } from 'node:http'
+import { createServer } from 'node:http'
 
 // node --watch -> atualiza o servidor a cada alteração
 
@@ -7,11 +7,11 @@
 // http -> criação de servidor
 // request -> informações da requisição na api
 // response -> resposta à requisição
-// const server = createServer((request, response) =>{
-//     response.write('Hello, World!')
+const server = createServer((request, response) =>{
+    response.write('Hello, World!')
 
-//     return response.end()
-// })
+    return response.end()
+})
 
-// porta local host
-// server.listen(3333)
+/* porta local host
+server.listen(3333) */
