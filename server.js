@@ -1,16 +1,21 @@
+// criação de servidor com fastify
 import { createServer } from 'node:http'
 
-// fs -> manipulação de arquivos
-// crypto -> criptografia
-// http -> criação de servidor
+const server = Fastify()
 
-// request -> informações da requisição na api
-//  response -> resposta à requisição
-const server = createServer((request, response) =>{
-    response.write('Hello, World')
+server.get('/', () => {
+    return 'Hello, World!';
+})
 
-    return response.end()
+server.get('/welcome', () => {
+    return "Bernardo's Project!";
+})
+
+server.get('/welcome', () => {
+    return 'This is a Node.JS Project!';
 })
 
 //porta local host
-server.listen(3333)
+server.listen ({
+    port: 3333,
+})

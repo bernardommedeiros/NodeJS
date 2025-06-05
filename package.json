@@ -6,19 +6,21 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bernardommedeiros/NodeJS.git"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bernardommedeiros/NodeJS/issues"
   },
-  "homepage": "https://github.com/bernardommedeiros/NodeJS#readme"
+  "homepage": "https://github.com/bernardommedeiros/NodeJS#readme",
+  "dependencies": {
+    "fastify": "^5.3.3"
+  }
 }
