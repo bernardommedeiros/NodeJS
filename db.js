@@ -1,15 +1,15 @@
 import { randomUUID } from "node:crypto"
 
-export class Db {
+export class DataBase {
     #products = new Map();
 
     list() {
-        return this.#products.values()
+        return Array.from(this.#products.values   ()); 
     }
 
     create(product) {
         const productId = randomUUID()
-        this.#products.set()
+        this.#products.set(productId, product)
     }
 
     update(id, product) {
