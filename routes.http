@@ -4,9 +4,20 @@ Content-Type: application/json
 {
     "title": "Produto 01",
     "description": "Primeiro produto",
-    "price": 20
+    "price": 30
 }
 
 ###
 
 GET http://localhost:3333/products
+
+###
+
+PUT http://localhost:3333/products/productId
+Content-Type: application/json
+
+{
+    "title": "Produto 02",
+    "description": "Segundo produto",
+    "price": 30
+}

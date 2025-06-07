@@ -10,8 +10,8 @@ server.get('/', () => {
     return ("Hello");
 })
 
-server.post('/products', (request, reply) => {
-    const { title, description, price } = request.body
+server.post('/products', (req, reply) => {
+    const { title, description, price } = req.body
     database.create({
         title: title,
         description: description,
@@ -19,19 +19,28 @@ server.post('/products', (request, reply) => {
     })
 
     // status 201 = algo foi criado, convenção
-    return reply.status(201).send()
+    return (reply.status(201).send());
 })
 
-server.get('/products', (request, reply) => {
-    const products = database.list()
+server.get('/products', (req, reply) => {
+    const products = database.list();
 
-    return reply.status(200).send( {products} );
+    return (reply.status(200).send( {products} ));
 })
 
 // Request body -> em POST e PUT, corpo dos dados enviados
 
-server.put('/products/:id', () => {
-    return "Change the selected product";
+server.put('/products/:id', (req, reply) => {
+    const productId = req.params.id;
+
+    const { title, description, price } = req.body;
+
+    const product = database.update(productId, {
+        title: title,
+        description: description,
+        price: price,
+    })
+    return (reply.status(204).send());
 })
 
 server.delete('/products/:id', () => {

@@ -7,6 +7,10 @@ import { createServer } from 'node:http'
 // http -> criação de servidor
 // request -> informações da requisição na api
 // response -> resposta à requisição
+
+// value -> tras as informações
+// entries -> value + tras o id
+
 const server = createServer((request, response) =>{
     response.write('Hello, World!')
 

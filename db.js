@@ -5,7 +5,15 @@ export class DataBase {
     #products = new Map();
 
     list() {
-        return Array.from(this.#products.values()); 
+        return (Array.from(this.#products.entries()).map((productArr)=> {
+            const id = productArr[0];
+            const data = productArr[1];
+
+            return {
+                id,
+                ...data,
+            }
+        })); 
     }
 
     create(product) {
