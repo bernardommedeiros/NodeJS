@@ -4,24 +4,31 @@ import { DataBase } from "./db.js"
 const server = fastify()
 const database = new DataBase()
 
-server.post('/', () => {
-    return 'Seja bem vindo a loja!';
-})
 
-// reply -> response
+server.get('/', () => {
+
+    return ("Hello");
+})
 
 server.post('/products', (request, reply) => {
+    const { title, description, price } = request.body
     database.create({
-        title: "Produto 01",
-        description: "Primeiro produto",
-        value: 20,
+        title: title,
+        description: description,
+        price: price,
     })
 
-    console.log(database.list());
-
-        // status 201 = algo foi criado, convenão
+    // status 201 = algo foi criado, convenção
     return reply.status(201).send()
 })
+
+server.get('/products', (request, reply) => {
+    const products = database.list()
+
+    return reply.status(200).send( {products} );
+})
+
+// Request body -> em POST e PUT, corpo dos dados enviados
 
 server.put('/products/:id', () => {
     return "Change the selected product";
