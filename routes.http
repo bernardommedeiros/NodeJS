@@ -13,7 +13,7 @@ GET http://localhost:3333/products
 
 ###
 
-PUT http://localhost:3333/products/productId
+PUT http://localhost:3333/products/productID
 Content-Type: application/json
 
 {
@@ -21,3 +21,8 @@ Content-Type: application/json
     "description": "Segundo produto",
     "price": 30
 }
+
+###
+
+DELETE http://localhost:3333/products/productID
+

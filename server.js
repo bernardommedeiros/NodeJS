@@ -28,7 +28,6 @@ server.get('/products', (req, reply) => {
     return (reply.status(200).send( {products} ));
 })
 
-// Request body -> em POST e PUT, corpo dos dados enviados
 
 server.put('/products/:id', (req, reply) => {
     const productId = req.params.id;
@@ -43,8 +42,12 @@ server.put('/products/:id', (req, reply) => {
     return (reply.status(204).send());
 })
 
-server.delete('/products/:id', () => {
-    return "Delete the selected Product";
+server.delete('/products/:id', (req, reply) => {
+    const productId = req.params.id;
+
+    const product = database.delete(productId)
+
+    return (reply.status(204).send());
 })
 
 server.get('/tech', () => {
