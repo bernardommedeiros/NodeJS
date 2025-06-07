@@ -2,14 +2,14 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-    "title": "Produto 01",
+    "title": "produto 01",
     "description": "Primeiro produto",
     "price": 30
 }
 
 ###
 
-GET http://localhost:3333/products
+GET http://localhost:3333/products?search=produto
 
 ###
 

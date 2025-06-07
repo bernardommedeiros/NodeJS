@@ -4,8 +4,9 @@ export class DataBase {
     // # -> informação privada
     #products = new Map();
 
-    list() {
-        return (Array.from(this.#products.entries()).map((productArr)=> {
+    list(search) {
+        return (Array.from(this.#products.entries())
+        .map((productArr)=> {
             const id = productArr[0];
             const data = productArr[1];
 
@@ -13,7 +14,16 @@ export class DataBase {
                 id,
                 ...data,
             }
-        })); 
+        })
+
+        .filter(product =>{
+            if (search){
+                return (product.title.includes(search));
+            }
+
+            return true;
+        })
+    ); 
     }
 
     create(product) {

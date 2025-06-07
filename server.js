@@ -23,7 +23,9 @@ server.post('/products', (req, reply) => {
 })
 
 server.get('/products', (req, reply) => {
-    const products = database.list();
+    const search = req.query.search;
+
+    const products = database.list(search);
 
     return (reply.status(200).send( {products} ));
 })

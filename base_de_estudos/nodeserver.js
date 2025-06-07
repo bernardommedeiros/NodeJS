@@ -23,3 +23,5 @@ server.listen(3333) */
 // Request body -> em POST e PUT, corpo dos dados enviados
 
 // 204 -> resposta com sucesso, porem, em branco
+
+// query parameters -> serve para informações adicionais, filtragem, ordenação etc
