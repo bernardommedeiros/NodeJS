@@ -9,11 +9,12 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/products?search=produto
+GET http://localhost:3333/products  
+# ?search=produto -> para filtragem
 
 ###
 
-PUT http://localhost:3333/products/productID
+PUT http://localhost:3333/products/productId
 Content-Type: application/json
 
 {

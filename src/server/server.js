@@ -1,5 +1,5 @@
 import { fastify } from 'fastify'
-import { DataBase } from "./db.js"
+import { DataBase } from "../database/db.js"
 
 const server = fastify()
 const database = new DataBase()
@@ -7,7 +7,7 @@ const database = new DataBase()
 
 server.get('/', () => {
 
-    return ("Hello");
+    return ("Hello, World!");
 })
 
 server.post('/products', (req, reply) => {
